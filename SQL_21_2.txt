@@ -35,11 +35,9 @@ ON e.deptno=d.deptno
 ORDER BY loc ASC;
 
 
-7. SELECT COUNT(DISTINCT(empno)) AS "EMPCOUNT" ,NULL  AS "DEPTCOUNT"
-FROM emp
-UNION 
-SELECT NULL,COUNT(DISTINCT(deptno))
-FROM dept;
+7. SELECT COUNT(DISTINCT(e.empno)) AS 'No. of Employees',COUnt(DISTINCT(d.deptno)) AS 'No. of Depts'
+FROM emp e,dept d
+
 
 
 8. SELECT e.ename AS "EMPNAME",m.ename AS "MGRNAME"
