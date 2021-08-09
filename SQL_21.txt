@@ -46,9 +46,9 @@ WHERE ename LIKE '%r' AND ename LIKE 't%'
 FROM emp
 WHERE INSTR(ename,'a')
 
-13. SELECT * 
+13. SELECT ename,hiredate
 FROM emp
-WHERE hiredate LIKE '19%'
+WHERE CAST(hiredate AS int)<19
 
 14. SELECT empno
 FROM emp
