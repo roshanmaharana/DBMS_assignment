@@ -89,9 +89,9 @@ WHERE job LIKE 'Clerk'
 24. SELECT sal*12 AS 'Annual Sal'
 FROM emp
 
-25. SELECT 12*(sal+0.2*sal) AS 'Annual Sal'
-FROM emp
-WHERE name LIKE 'Ford'
+25. SELECT empno,sal+(sal*20)/100 AS sal, ename 
+FROM emp 
+WHERE ename="Ford"
 
 26. SELECT SUM(sal)
 FROM emp
