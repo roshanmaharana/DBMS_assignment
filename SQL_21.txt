@@ -1,0 +1,144 @@
+SQL_21
+
+1. SELECT ename 
+FROM emp
+WHERE job LIKE 'clerk'
+
+2. SELECT ename
+FROM emp
+WHERE job LIKE 'clerk' OR job LIKE 'Manager'
+
+3. SELECT DATE()
+
+4. SELECT ename,sal
+FROM emp
+WHERE sal BETWEEN 500 AND 1000
+
+5. SELECT ename,hiredate
+FROM emp
+WHERE hiredate LIKE '__DEC%' OR hiredate LIKE '___DEC%';
+
+6. SELECT ename,sal
+FROM emp
+WHERE sal NOT BETWEEN 1000 AND 2500
+
+7. SELECT ename,sal
+FROM emp
+WHERE sal IN(800, 950, 3000,5000)
+
+8. SELECT*
+FROM emp
+WHERE ename LIKE '_l%'
+
+9. SELECT*
+FROM emp
+WHERE ename LIKE '%d'
+
+10. SELECT*
+FROM emp
+WHERE LENGTH(ename)=5
+
+11. SELECT*
+FROM emp
+WHERE ename LIKE '%r' AND ename LIKE 't%'
+
+12. SELECT*
+FROM emp
+WHERE INSTR(ename,'a')
+
+13. SELECT * 
+FROM emp
+WHERE hiredate LIKE '19%'
+
+14. SELECT empno
+FROM emp
+WHERE ename LIKE 'James'
+
+15. SELECT sal
+FROM emp
+WHERE ename LIKE 'King'
+
+16. SELECT ename
+FROM emp
+WHERE job LIKE 'President'
+
+17. SELECT*
+FROM emp
+WHERE job LIKE 'Manager'
+
+18. SELECT*
+FROM emp
+WHERE comm NOT NULL
+
+19. SELECT ename,hiredate
+FROM emp
+WHERE hiredate<('1981-4-1')
+
+20,21. SELECT ename,sal
+FROM emp
+WHERE ename LIKE 'King' OR ename LIKE 'Blake' OR ename LIKE 'Ford' OR ename LIKE 'Smith'
+
+22. SELECT ename,sal
+FROM emp
+WHERE sal<3500
+
+23. SELECT *
+FROM emp
+WHERE job LIKE 'Clerk'
+
+24. SELECT sal*12 AS 'Annual Sal'
+FROM emp
+
+25. SELECT 12*(sal+0.2*sal) AS 'Annual Sal'
+FROM emp
+WHERE name LIKE 'Ford'
+
+26. SELECT SUM(sal)
+FROM emp
+GROUP BY deptno
+
+
+27. SELECT MIN(sal)
+FROM emp
+WHERE deptno=10
+
+
+28. SELECT ROUND(AVG(sal),2)
+FROM emp
+WHERE job LIKE 'manager'
+
+
+29. SELECT SUM(sal)
+FROM emp
+WHERE job LIKE 'Salesman'
+
+
+30. SELECT DISTINCT(job)
+FROM emp
+WHERE sal =(SELECT MIN(sal) FROM emp)
+
+
+31. SELECT COUNT(DISTINCT(job)) AS "number"
+FROM emp
+
+
+32. SELECT MAX(sal)
+FROM emp
+WHERE job LIKE 'ANALYST'
+
+
+33. SELECT MAX(comm)
+FROM emp
+
+
+34. SELECT COUNT(DISTINCT(deptno))
+FROM emp
+
+
+35. SELECT ename
+FROM emp
+WHERE ename LIKE '__l%'
+
+
+
+

@@ -1,0 +1,104 @@
+1. SELECT d.deptno,d.dname
+FROM dept d
+LEFT OUTER JOIN emp e
+ON d.deptno=e.deptno
+WHERE empno IS NULL;
+
+
+2. SELECT ename,job
+FROM emp 
+WHERE mgr IS NULL;
+
+
+3. SELECT e.ename,e.job
+FROM emp e 
+JOIN dept d
+ON e.deptno=d.deptno AND d.loc="NEWYORK" AND e.comm>10;
+
+
+4. SELECT COUNT(*) AS "EMPS WORKING IN CHICAGO"
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno AND d.LOC="CHICAGO";
+
+
+5. SELECT e.ename AS "EMPS WORKING IN CHICAGO"
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno AND d.LOC="CHICAGO";
+
+
+6. SELECT e.ename,d.loc
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno
+ORDER BY loc ASC;
+
+
+7. SELECT COUNT(DISTINCT(empno)) AS "EMPCOUNT" ,NULL  AS "DEPTCOUNT"
+FROM emp
+UNION 
+SELECT NULL,COUNT(DISTINCT(deptno))
+FROM dept;
+
+
+8. SELECT e.ename AS "EMPNAME",m.ename AS "MGRNAME"
+FROM emp e 
+JOIN emp m
+ON e.mgr=m.empno AND e.hiredate>m.hiredate;
+
+
+FROM emp e
+JOIN emp m
+ON e.mgr=m.empno AND m.mgr=(SELECT m.empno FROM emp m WHERE m.mgr IS NULL);         
+
+
+10. 
+SELECT ename,empno,job
+FROM emp 
+WHERE mgr IS NULL;
+
+
+11. SELECT ename,deptno
+FROM emp 
+WHERE ename LIKE "SMITH";        
+
+
+12. SELECT e.ename,e.empno,d.loc
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno AND e.job LIKE "SALESMAN" AND d.loc <> "BOSTON";
+        
+
+13. SELECT e.ename AS "EMP_NAME",d.loc AS "EMP_LOC"
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno;
+
+
+14. SELECT ename,empno,sal
+FROM emp
+WHERE job LIKE "SALESMAN" AND sal < (SELECT sal FROM emp WHERE ename LIKE "MILLER");
+        
+
+15. SELECT *
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno AND d.LOC="CHICAGO";
+
+
+16. SELECT ename,sal
+FROM emp
+where sal > ( SELECT MIN(sal) FROM emp WHERE job like "MAN%");
+
+
+17. SELECT e.ename,e.empno,d.deptno
+FROM emp e
+JOIN dept d
+ON e.deptno=d.deptno AND d.dname="ACCOUNTING";
+
+
+18.  SELECT empno,ename 
+FROM emp
+WHERE mgr IS NOT NULL;
+
