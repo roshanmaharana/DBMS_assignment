@@ -113,10 +113,10 @@ FROM emp
 WHERE job LIKE 'Salesman'
 
 
-30. SELECT DISTINCT(job)
-FROM emp
-WHERE sal =(SELECT MIN(sal) FROM emp)
-
+30. SELECT deptno,AVG(sal) AS AvgSal
+FORM emp 
+GROUB BY deptno
+HAVING MIN(AvgSal);
 
 31. SELECT COUNT(DISTINCT(job)) AS "number"
 FROM emp
